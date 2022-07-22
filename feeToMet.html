@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <table>
+        <tr>
+            <th style="color:blue">Amount</th>
+            <th style="color:blue">From</th>
+            <th style="color:blue">To</th>
+        </tr>
+        <tr>
+            <td><input type="number" placeholder="Amount" id="amount"></td>
+            <td><select name="" id="fromfeet" style="width: 150px; height: 20px; color : rgb(234, 11, 70);"> 
+                <option value="feet">feet</option>
+                <option value="met">met</option>
+            </td>
+            <td><select name="" id="tomet" style="width: 150px; height: 20px; color : rgb(234, 11, 70);">
+                <option value="feet">feet</option>
+                <option value="met">met</option>
+            </td>    
+            
+        </tr>
+    
+        
+        </table><br>
+        <td><button type="button" onclick="Convert();">Convert</button></td>
+        
+    </form>
+    <p id="result" style="color:red"></p>
+</body>
+</html> <script>
+    function Convert() {
+    let amount = document.getElementById("amount").value;
+    let feet_met = 0.305 * amount;
+    let met_feet = 3.279 * amount;
+    let fromfeet = document.getElementById("fromfeet").value;
+    let tomet = document.getElementById("tomet").value;
+
+    if (fromfeet == "feet" && tomet == "met") {
+       document.getElementById("result").innerHTML = "Result: " + feet_met +" metters";
+
+    } else if (fromfeet == "met" && tomet == "feet") {
+        document.getElementById("result").innerHTML = "Result: " + met_feet +" feet";
+
+    } else {
+        document.getElementById("result").innerHTML =  "Result: " + amount;
+    }
+}
+</script>
